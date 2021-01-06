@@ -1,0 +1,70 @@
+from tkinter import *
+import tkinter.font as tkFont
+
+root = Tk()
+
+
+#name of the program for now
+root.title("Minjun's game") 
+
+#setting for how large the game window should be
+root.geometry("400x400")
+
+def notready():
+    return
+
+def load_homescreen():
+    whitespace.pack()
+    gametitle.pack()
+    whitespace1.pack()
+    playbutton.pack()
+    whitespace2.pack()
+    infobutton.pack()
+    whitespace3.pack()
+    quitbutton.pack()
+    info_text.pack_forget()
+    backbutton.pack_forget()
+
+def gameinfo():
+    whitespace.pack_forget()
+    gametitle.pack_forget()
+    whitespace1.pack_forget()
+    playbutton.pack_forget()
+    whitespace2.pack_forget()
+    infobutton.pack_forget()
+    whitespace3.pack_forget()
+    quitbutton.pack_forget()
+    info_text.pack()
+    backbutton.pack()
+
+#All of the different fonts used for different areas
+titlefont = tkFont.Font(family="Lato", size=20)
+buttonfont = tkFont.Font(family="Lato", size=15)
+
+#Area where all of the labels and buttons are created
+whitespace = Label(root, text="")
+whitespace1 = Label(root, text="")
+whitespace2 = Label(root, text="")
+whitespace3 = Label(root, text="")
+gametitle = Label(root, text="Minjuns scuffed game", font=titlefont)
+playbutton = Button(root, text="Play", command=notready, padx=100, pady=10, font=buttonfont,)
+infobutton = Button(root, text="How to play", command=gameinfo, padx=67, pady=10, font=buttonfont)
+quitbutton = Button(root, text="Quit", command=root.destroy, padx=100, pady=10, font=buttonfont)
+
+#This is the Game information
+info_text = Label(root, text="""
+Hello to Minjuns game.
+This game involves the use of your memory. 
+Every 5 seconds, a question will appear. 
+It is your job to awnser that question, 
+choosing one of 4 different responses. 
+Careful! if you don't awnser in time, 
+or have a different awnser than before, 
+its game over.
+""", font=buttonfont)
+backbutton = Button(root, text="Back", command=load_homescreen, padx=100, pady=10, font=buttonfont)
+
+
+load_homescreen()
+
+root.mainloop()
