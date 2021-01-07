@@ -1,0 +1,116 @@
+from tkinter import *
+import tkinter.font as tkFont
+
+root = Tk()
+
+#To keep track of the player''s score durong the game
+gamescore = 0
+
+#name of the program for now
+root.title("Minjun's game") 
+
+#setting for how large the game window should be
+root.geometry("400x400")
+
+#the question's command functions
+def question_name_button_command1():
+    global question_name_button_variable_1
+    question_name_button_variable_1 = True
+    if question_name_button_variable_1 == True:
+        global gamescore
+        gamescore += 1
+        clear_everything()
+    elif question_name_button_variable_1 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+def question_name_load():
+    clear_everything()
+    big_whitespace1.pack()
+    question_name.pack()
+    small_whitespace1.pack()
+    question_name_button1.pack()
+
+def GAMEOVER():
+    return
+
+#To remove anything on the program; all labels from all of the code. Very useful
+def clear_everything():
+    error.pack_forget()
+    big_whitespace1.pack_forget()
+    question_name.pack_forget()
+    big_whitespace2.pack_forget()
+    question_name_button1.pack_forget()
+    small_whitespace1.pack_forget()
+    small_whitespace2.pack_forget()
+    gametitle.pack_forget()
+    playbutton.pack_forget()
+    infobutton.pack_forget()
+    quitbutton.pack_forget()
+    info_text.pack_forget()
+    backbutton.pack_forget()
+
+#For loading the homescreen
+def load_homescreen():
+    clear_everything()
+    big_whitespace1.pack()
+    gametitle.pack()
+    big_whitespace2.pack()
+    playbutton.pack()
+    small_whitespace1.pack()
+    infobutton.pack()
+    small_whitespace2.pack()
+    quitbutton.pack()
+
+#for loading the game info for the "How to play"
+def gameinfo():
+    clear_everything()
+    info_text.pack()
+    backbutton.pack()
+
+#All of the different fonts used for different areas
+titlefont = tkFont.Font(family="Lato", size=20)
+buttonfont = tkFont.Font(family="Lato", size=15)
+
+#All of the labels for the black spaces in the program
+big_whitespace1 = Label(root, text="")
+big_whitespace2 = Label(root, text="")
+small_whitespace1 = Label(root, text="")
+small_whitespace2 = Label(root, text="")
+
+#labels and buttons for the game's homescreen
+gametitle = Label(root, text="Minjuns scuffed game", font=titlefont)
+playbutton = Button(root, text="Play", command=question_name_load, padx=100, pady=10, font=buttonfont,)
+infobutton = Button(root, text="How to play", command=gameinfo, padx=67, pady=10, font=buttonfont)
+quitbutton = Button(root, text="Quit", command=root.destroy, padx=100, pady=10, font=buttonfont)
+
+#An error text for when there's a run-time error
+error = Label(root, text="An error has occured", font=titlefont)
+
+#This is the Game information
+info_text = Label(root, text="""
+Hello to Minjuns game.
+This game involves the use of your memory. 
+Every 5 seconds, a question will appear. 
+It is your job to awnser that question, 
+choosing one of 4 different responses. 
+Careful! if you don't awnser in time, 
+or have a different awnser than before, 
+its game over.
+""", font=buttonfont)
+backbutton = Button(root, text="Back", command=load_homescreen, padx=100, pady=10, font=buttonfont)
+
+
+
+
+whitespace4 = Label(root, text="", font=buttonfont)
+question_name = Label(root, text="What is your name?", font=titlefont)
+whitespace5 = Label(root, text="", font=buttonfont)
+question_name_button1 = Button(root, text="David von dutch", command=question_name_button_command1, padx=67, pady=10, font=buttonfont)
+question_name_button_variable_1 = False
+
+question_name_load()
+load_homescreen()
+
+root.mainloop()
