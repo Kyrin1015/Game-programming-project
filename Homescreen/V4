@@ -1,0 +1,242 @@
+from tkinter import *
+import tkinter.font as tkFont
+import random
+
+root = Tk()
+
+#To keep track of the player''s score during the game and for how many times the player has encountered a certain question
+gamescore = 0
+question_one_count = 0
+question_two_count = 0
+
+#name of the program for now
+root.title("Minjun's game") 
+
+#setting for how large the game window should be
+root.geometry("400x400")
+
+#All of the random number generation to pick which question to ask the user.
+def rng_for_question():
+    clear_everything()
+    random_num = random.randint(1,2)
+    if random_num == 1:
+        question_one_load()
+    elif random_num == 2:
+        question_two_load()
+    elif random_num == 3:
+        question_two_load
+
+#the question's command functions for Question one, Button one
+def question_one_button_command1():
+    global question_one_button_variable_1
+    global question_one_count
+    if question_one_count < 1:
+        question_one_button_variable_1 = True
+        question_one_count += 1
+    if question_one_button_variable_1 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_one_button_variable_1 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+#the question's command functions for Question one, Button two 
+def question_one_button_command2():
+    global question_one_button_variable_2
+    global question_one_count
+    if question_one_count < 2:
+        question_one_button_variable_2 = True
+        question_one_count += 1
+    if question_one_button_variable_2 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_one_button_variable_2 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+#the question's command functions for Question one, Button three
+def question_one_button_command3():
+    global question_one_button_variable_3
+    global question_one_count
+    if question_one_count < 2:
+        question_one_button_variable_3 = True
+        question_one_count += 1
+    if question_one_button_variable_3 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_one_button_variable_3 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+#the question's command functions for Question two, Button one
+def question_two_button_command1():
+    global question_two_button_variable_1
+    global question_two_count
+    if question_two_count < 1:
+        question_two_button_variable_1 = True
+        question_two_count += 1
+    if question_two_button_variable_1 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_two_button_variable_1 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+#the question's command functions for Question two, Button two 
+def question_two_button_command2():
+    global question_two_button_variable_2
+    global question_two_count
+    if question_two_count < 2:
+        question_two_button_variable_2 = True
+        question_two_count += 1
+    if question_two_button_variable_2 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_two_button_variable_2 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+#the question's command functions for Question two, Button three
+def question_two_button_command3():
+    global question_two_button_variable_3
+    global question_two_count
+    if question_two_count < 3:
+        question_two_button_variable_3 = True
+        question_two_count += 1
+    if question_two_button_variable_3 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_two_button_variable_3 == False:
+        GAMEOVER()
+    else:
+        error.pack()
+
+def question_one_load():
+    big_whitespace1.pack()
+    question_one.pack()
+    small_whitespace1.pack()
+    question_one_button1.pack()
+    small_whitespace2.pack()
+    question_one_button2.pack()
+    small_whitespace3.pack()
+    question_one_button3.pack()
+
+def question_two_load():
+    big_whitespace1.pack()
+    question_two.pack()
+    small_whitespace1.pack()
+    question_two_button1.pack()
+    small_whitespace2.pack()
+    question_two_button2.pack()
+    small_whitespace3.pack()
+    question_two_button3.pack()
+
+def GAMEOVER():
+    return
+
+#To remove anything on the program; all labels from all of the code. Very useful
+def clear_everything():
+    error.pack_forget()
+    big_whitespace1.pack_forget()
+    big_whitespace2.pack_forget()
+    small_whitespace1.pack_forget()
+    small_whitespace2.pack_forget()    
+    small_whitespace3.pack_forget()    
+    gametitle.pack_forget()
+    playbutton.pack_forget()
+    infobutton.pack_forget()
+    quitbutton.pack_forget()
+    info_text.pack_forget()
+    backbutton.pack_forget()
+    
+    question_one.pack_forget()
+    question_one_button1.pack_forget()
+    question_one_button2.pack_forget()
+    question_one_button3.pack_forget()
+    
+    question_two.pack_forget()
+    question_two_button1.pack_forget()
+    question_two_button2.pack_forget()
+    question_two_button3.pack_forget()
+
+#For loading the homescreen
+def load_homescreen():
+    clear_everything()
+    big_whitespace1.pack()
+    gametitle.pack()
+    big_whitespace2.pack()
+    playbutton.pack()
+    small_whitespace1.pack()
+    infobutton.pack()
+    small_whitespace2.pack()
+    quitbutton.pack()
+
+#for loading the game info for the "How to play"
+def gameinfo():
+    clear_everything()
+    info_text.pack()
+    backbutton.pack()
+
+#All of the different fonts used for different areas
+titlefont = tkFont.Font(family="Lato", size=20)
+buttonfont = tkFont.Font(family="Lato", size=15)
+
+#All of the labels for the black spaces in the program
+big_whitespace1 = Label(root, text="")
+big_whitespace2 = Label(root, text="")
+small_whitespace1 = Label(root, text="")
+small_whitespace2 = Label(root, text="")
+small_whitespace3 = Label(root, text="")
+
+#labels and buttons for the game's homescreen
+gametitle = Label(root, text="Minjuns scuffed game", font=titlefont)
+playbutton = Button(root, text="Play", command=rng_for_question, padx=100, pady=10, font=buttonfont,)
+infobutton = Button(root, text="How to play", command=gameinfo, padx=67, pady=10, font=buttonfont)
+quitbutton = Button(root, text="Quit", command=root.destroy, padx=100, pady=10, font=buttonfont)
+
+#An error text for when there's a run-time error
+error = Label(root, text="An error has occured", font=titlefont)
+
+#This is the Game information
+info_text = Label(root, text="""
+Hello to Minjuns game.
+This game involves the use of your memory. 
+Every 5 seconds, a question will appear. 
+It is your job to awnser that question, 
+choosing one of 4 different responses. 
+Careful! if you don't awnser in time, 
+or have a different awnser than before, 
+its game over.
+""", font=buttonfont)
+backbutton = Button(root, text="Back", command=load_homescreen, padx=100, pady=10, font=buttonfont)
+
+#All of the buttons and lebels for question 1(What is your name?)
+question_one = Label(root, text="What is your name?", font=titlefont)
+question_one_button1 = Button(root, text="David King", command=question_one_button_command1, padx=67, pady=10, font=buttonfont)
+question_one_button_variable_1 = False
+question_one_button2 = Button(root, text="Shawn Macdonald", command=question_one_button_command2, padx=33, pady=10, font=buttonfont)
+question_one_button_variable_2 = False
+question_one_button3 = Button(root, text="Jacob Sherian", command=question_one_button_command3, padx=51, pady=10, font=buttonfont)
+question_one_button_variable_3 = False
+
+#All of the buttons and labels for question 2(What did you eat for breakfast?)
+question_two = Label(root, text="What did you eat for breakfast?", font=titlefont)
+question_two_button1 = Button(root, text="Eggs and Bacon", command=question_two_button_command1, padx=67, pady=10, font=buttonfont)
+question_two_button_variable_1 = False
+question_two_button2 = Button(root, text="Cereal", command=question_two_button_command2, padx=67, pady=10, font=buttonfont)
+question_two_button_variable_2 = False
+question_two_button3 = Button(root, text="Toast", command=question_two_button_command3, padx=51, pady=10, font=buttonfont)
+question_two_button_variable_3 = False
+
+load_homescreen()
