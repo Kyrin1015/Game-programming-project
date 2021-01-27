@@ -1,0 +1,53 @@
+#the question's command functions for Question ten, Button one
+def question_ten_button_command1():
+    global question_ten_button_variable_1
+    global question_ten_count
+    if question_ten_count == 0:
+        question_ten_button_variable_1 = True
+        question_ten_count += 1
+    if question_ten_button_variable_1 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_ten_button_variable_1 == False:
+        game_over()
+    else:
+        error.pack()
+    time_limit_cancel()
+    print( question_ten_count,question_ten_button_variable_1, gamescore)
+
+#the question's command functions for Question ten, Button two
+def question_ten_button_command2():
+    global question_ten_button_variable_2
+    global question_ten_count
+    if question_ten_count == 0:
+        question_ten_button_variable_2 = True
+        question_ten_count += 1
+    if question_ten_button_variable_2 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_ten_button_variable_2 == False:
+        game_over()
+    else:
+        error.pack()
+    time_limit_cancel()
+    print( question_ten_count,question_ten_button_variable_2, gamescore)
+
+#the question's command functions for Question ten, Button three
+def question_ten_button_command3():
+    global question_ten_button_variable_3
+    global question_ten_count
+    if question_ten_count == 0:
+        question_ten_button_variable_3 = True
+        question_ten_count += 1
+    if question_ten_button_variable_3 == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif question_ten_button_variable_3 == False:
+        game_over()
+    else:
+        error.pack()
+    time_limit_cancel()
+    print( question_ten_count,question_ten_button_variable_3, gamescore)
