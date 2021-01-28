@@ -1,0 +1,922 @@
+from tkinter import *
+import tkinter.font as tkFont
+import random
+from time import time
+
+"""
+print ("Start")
+zero=time.clock()
+print(time.clock())
+print(time.clock())
+words=input("Type in a sentence: ")
+if (time.clock()-zero) > var:
+end=time.clock()
+print("It took you",end-start,"seconds to type that in!")
+"""
+root = Tk()
+
+#To keep track of the player''s score during the game and for how many times the player has encountered a certain question
+gamescore = 0
+question_count = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+#name of the program for now
+root.title("Minjun's game") 
+
+#setting for how large the game window should be
+root.geometry("460x400")
+
+"""
+A time module that never worked out
+def time_limit():
+    global action
+    action = None
+    action = root.after(5000, game_over)
+
+def time_limit_cancel():
+    global action
+    root.after_cancel(self,action)
+    return
+"""
+
+#All of the random number generation to pick which question to ask the user.
+def rng_for_question():
+    clear_everything()
+    random_num = random.randint(0,19)
+    questionList = [question_one_load, question_two_load, question_three_load, question_four_load, question_five_load,\
+                    question_six_load, question_seven_load, question_eight_load, question_nine_load, question_ten_load,\
+                    question_eleven_load, question_twelve_load, question_thirteen_load, question_fourteen_load, question_fifteen_load,\
+                    question_sixteen_load, question_seventeen_load, question_eighteen_load, question_nineteen_load, question_twenty_load]
+    questionList[random_num]()
+    #time_limit()
+        
+#the question's command functions for Question one
+def question_one_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+
+#the question's command functions for Question two
+def question_two_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question three
+def question_three_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+
+#the question's command functions for Question four
+def question_four_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question five
+def question_five_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question six
+def question_six_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question seven
+def question_seven_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question eight
+def question_eight_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question nine
+def question_nine_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question ten
+def question_ten_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question eleven
+def question_eleven_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question twelve
+def question_twelve_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+    
+
+#the question's command functions for Question thirteen
+def question_thirteen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question fourteen
+def question_fourteen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question fifteen
+def question_fifteen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question sixteen
+def question_sixteen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question seventeen
+def question_seventeen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question eighteen
+def question_eighteen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question nineteen
+def question_nineteen_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#the question's command functions for Question twenty
+def question_twenty_button_command(q_count, q_val):
+    global questionButtonVar
+    global question_count
+    if question_count[q_count] == 0:
+        questionButtonVar[q_val] = True
+        question_count[q_count] += 1
+    if questionButtonVar[q_val] == True:
+        global gamescore
+        gamescore += 1
+        rng_for_question()
+    elif questionButtonVar[q_val] == False:
+        game_over()
+    else:
+        error.pack()
+    #time_limit_cancel()
+
+#All of the functions that packs all of the questions
+def question_one_load():
+    big_whitespace1.pack()
+    question_one.pack()
+    small_whitespace1.pack()
+    question_one_button1.pack()
+    small_whitespace2.pack()
+    question_one_button2.pack()
+    small_whitespace3.pack()
+    question_one_button3.pack()
+
+def question_two_load():
+    big_whitespace1.pack()
+    question_two.pack()
+    small_whitespace1.pack()
+    question_two_button1.pack()
+    small_whitespace2.pack()
+    question_two_button2.pack()
+    small_whitespace3.pack()
+    question_two_button3.pack()
+
+def question_three_load():
+    big_whitespace1.pack()
+    question_three.pack()
+    small_whitespace1.pack()
+    question_three_button1.pack()
+    small_whitespace2.pack()
+    question_three_button2.pack()
+    small_whitespace3.pack()
+    question_three_button3.pack()
+
+def question_four_load():
+    big_whitespace1.pack()
+    question_four.pack()
+    small_whitespace1.pack()
+    question_four_button1.pack()
+    small_whitespace2.pack()
+    question_four_button2.pack()
+    small_whitespace3.pack()
+    question_four_button3.pack()
+
+def question_five_load():
+    big_whitespace1.pack()
+    question_five.pack()
+    small_whitespace1.pack()
+    question_five_button1.pack()
+    small_whitespace2.pack()
+    question_five_button2.pack()
+    small_whitespace3.pack()
+    question_five_button3.pack()
+
+def question_six_load():
+    big_whitespace1.pack()
+    question_six.pack()
+    small_whitespace1.pack()
+    question_six_button1.pack()
+    small_whitespace2.pack()
+    question_six_button2.pack()
+    small_whitespace3.pack()
+    question_six_button3.pack()
+
+def question_seven_load():
+    big_whitespace1.pack()
+    question_seven.pack()
+    small_whitespace1.pack()
+    question_seven_button1.pack()
+    small_whitespace2.pack()
+    question_seven_button2.pack()
+    small_whitespace3.pack()
+    question_seven_button3.pack()
+
+def question_eight_load():
+    big_whitespace1.pack()
+    question_eight.pack()
+    small_whitespace1.pack()
+    question_eight_button1.pack()
+    small_whitespace2.pack()
+    question_eight_button2.pack()
+    small_whitespace3.pack()
+    question_eight_button3.pack()
+
+def question_nine_load():
+    big_whitespace1.pack()
+    question_nine.pack()
+    small_whitespace1.pack()
+    question_nine_button1.pack()
+    small_whitespace2.pack()
+    question_nine_button2.pack()
+    small_whitespace3.pack()
+    question_nine_button3.pack()
+
+def question_ten_load():
+    big_whitespace1.pack()
+    question_ten.pack()
+    small_whitespace1.pack()
+    question_ten_button1.pack()
+    small_whitespace2.pack()
+    question_ten_button2.pack()
+    small_whitespace3.pack()
+    question_ten_button3.pack()
+
+def question_eleven_load():
+    big_whitespace1.pack()
+    question_eleven.pack()
+    small_whitespace1.pack()
+    question_eleven_button1.pack()
+    small_whitespace2.pack()
+    question_eleven_button2.pack()
+    small_whitespace3.pack()
+    question_eleven_button3.pack()
+
+def question_twelve_load():
+    big_whitespace1.pack()
+    question_twelve.pack()
+    small_whitespace1.pack()
+    question_twelve_button1.pack()
+    small_whitespace2.pack()
+    question_twelve_button2.pack()
+    small_whitespace3.pack()
+    question_twelve_button3.pack()
+
+def question_thirteen_load():
+    big_whitespace1.pack()
+    question_thirteen.pack()
+    small_whitespace1.pack()
+    question_thirteen_button1.pack()
+    small_whitespace2.pack()
+    question_thirteen_button2.pack()
+    small_whitespace3.pack()
+    question_thirteen_button3.pack()
+
+def question_fourteen_load():
+    big_whitespace1.pack()
+    question_fourteen.pack()
+    small_whitespace1.pack()
+    question_fourteen_button1.pack()
+    small_whitespace2.pack()
+    question_fourteen_button2.pack()
+    small_whitespace3.pack()
+    question_fourteen_button3.pack()
+
+def question_fifteen_load():
+    big_whitespace1.pack()
+    question_fifteen.pack()
+    small_whitespace1.pack()
+    question_fifteen_button1.pack()
+    small_whitespace2.pack()
+    question_fifteen_button2.pack()
+    small_whitespace3.pack()
+    question_fifteen_button3.pack()
+
+def question_sixteen_load():
+    big_whitespace1.pack()
+    question_sixteen.pack()
+    small_whitespace1.pack()
+    question_sixteen_button1.pack()
+    small_whitespace2.pack()
+    question_sixteen_button2.pack()
+    small_whitespace3.pack()
+    question_sixteen_button3.pack()
+
+def question_seventeen_load():
+    big_whitespace1.pack()
+    question_seventeen.pack()
+    small_whitespace1.pack()
+    question_seventeen_button1.pack()
+    small_whitespace2.pack()
+    question_seventeen_button2.pack()
+    small_whitespace3.pack()
+    question_seventeen_button3.pack()
+
+def question_eighteen_load():
+    big_whitespace1.pack()
+    question_thirteen.pack()
+    small_whitespace1.pack()
+    question_thirteen_button1.pack()
+    small_whitespace2.pack()
+    question_thirteen_button2.pack()
+    small_whitespace3.pack()
+    question_thirteen_button3.pack()
+
+def question_nineteen_load():
+    big_whitespace1.pack()
+    question_thirteen.pack()
+    small_whitespace1.pack()
+    question_thirteen_button1.pack()
+    small_whitespace2.pack()
+    question_thirteen_button2.pack()
+    small_whitespace3.pack()
+    question_thirteen_button3.pack()
+
+def question_twenty_load():
+    big_whitespace1.pack()
+    question_thirteen.pack()
+    small_whitespace1.pack()
+    question_thirteen_button1.pack()
+    small_whitespace2.pack()
+    question_thirteen_button2.pack()
+    small_whitespace3.pack()
+    question_thirteen_button3.pack()
+
+def game_over():
+    global questionButtonVar
+    global question_count
+    global gamescore
+    gamescore_string = str(gamescore)
+    clear_everything()    
+    game_over_text_title.pack()
+    game_over_text.pack()
+    #configuring the label to present a game score
+    game_over_score.config(text="Your score is: " + gamescore_string)
+    game_over_score.pack()
+    small_whitespace2.pack()
+    game_over_button.pack()
+    #resetting allof the values
+    questionButtonVar = [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,\
+                     False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,\
+                     False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,]
+    question_count = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    gamescore = 0
+
+#To remove anything on the program; all labels from all of the code. Very useful
+def clear_everything():
+    error.pack_forget()
+    big_whitespace1.pack_forget()
+    big_whitespace2.pack_forget()
+    small_whitespace1.pack_forget()
+    small_whitespace2.pack_forget()    
+    small_whitespace3.pack_forget()    
+    gametitle.pack_forget()
+    playbutton.pack_forget()
+    infobutton.pack_forget()
+    quitbutton.pack_forget()
+    info_text.pack_forget()
+    backbutton.pack_forget()
+
+    game_over_text_title.pack_forget()
+    game_over_text.pack_forget()
+    game_over_score.pack_forget()
+    game_over_button.pack_forget()
+    
+    question_one.pack_forget()
+    question_one_button1.pack_forget()
+    question_one_button2.pack_forget()
+    question_one_button3.pack_forget()
+    
+    question_two.pack_forget()
+    question_two_button1.pack_forget()
+    question_two_button2.pack_forget()
+    question_two_button3.pack_forget()
+
+    question_three.pack_forget()
+    question_three_button1.pack_forget()
+    question_three_button2.pack_forget()
+    question_three_button3.pack_forget()
+
+    question_four.pack_forget()
+    question_four_button1.pack_forget()
+    question_four_button2.pack_forget()
+    question_four_button3.pack_forget()
+
+    question_five.pack_forget()
+    question_five_button1.pack_forget()
+    question_five_button2.pack_forget()
+    question_five_button3.pack_forget()
+
+    question_six.pack_forget()
+    question_six_button1.pack_forget()
+    question_six_button2.pack_forget()
+    question_six_button3.pack_forget()
+
+    question_seven.pack_forget()
+    question_seven_button1.pack_forget()
+    question_seven_button2.pack_forget()
+    question_seven_button3.pack_forget()
+
+    question_eight.pack_forget()
+    question_eight_button1.pack_forget()
+    question_eight_button2.pack_forget()
+    question_eight_button3.pack_forget()
+
+    question_nine.pack_forget()
+    question_nine_button1.pack_forget()
+    question_nine_button2.pack_forget()
+    question_nine_button3.pack_forget()
+
+    question_ten.pack_forget()
+    question_ten_button1.pack_forget()
+    question_ten_button2.pack_forget()
+    question_ten_button3.pack_forget()
+
+    question_eleven.pack_forget()
+    question_eleven_button1.pack_forget()
+    question_eleven_button2.pack_forget()
+    question_eleven_button3.pack_forget()
+
+    question_twelve.pack_forget()
+    question_twelve_button1.pack_forget()
+    question_twelve_button2.pack_forget()
+    question_twelve_button3.pack_forget()
+
+    question_thirteen.pack_forget()
+    question_thirteen_button1.pack_forget()
+    question_thirteen_button2.pack_forget()
+    question_thirteen_button3.pack_forget()
+
+    question_fourteen.pack_forget()
+    question_fourteen_button1.pack_forget()
+    question_fourteen_button2.pack_forget()
+    question_fourteen_button3.pack_forget()
+
+    question_fifteen.pack_forget()
+    question_fifteen_button1.pack_forget()
+    question_fifteen_button2.pack_forget()
+    question_fifteen_button3.pack_forget()
+
+    question_sixteen.pack_forget()
+    question_sixteen_button1.pack_forget()
+    question_sixteen_button2.pack_forget()
+    question_sixteen_button3.pack_forget()
+
+    question_seventeen.pack_forget()
+    question_seventeen_button1.pack_forget()
+    question_seventeen_button2.pack_forget()
+    question_seventeen_button3.pack_forget()
+
+    question_eighteen.pack_forget()
+    question_eighteen_button1.pack_forget()
+    question_eighteen_button2.pack_forget()
+    question_eighteen_button3.pack_forget()
+
+    question_nineteen.pack_forget()
+    question_nineteen_button1.pack_forget()
+    question_nineteen_button2.pack_forget()
+    question_nineteen_button3.pack_forget()
+
+    question_twenty.pack_forget()
+    question_twenty_button1.pack_forget()
+    question_twenty_button2.pack_forget()
+    question_twenty_button3.pack_forget()
+
+#For loading the homescreen
+def load_homescreen():
+    clear_everything()
+    big_whitespace1.pack()
+    gametitle.pack()
+    big_whitespace2.pack()
+    playbutton.pack()
+    small_whitespace1.pack()
+    infobutton.pack()
+    small_whitespace2.pack()
+    quitbutton.pack()
+
+#for loading the game info for the "How to play"
+def gameinfo():
+    clear_everything()
+    info_text.pack()
+    backbutton.pack()
+
+#All of the different fonts used for different areas
+titlefont = tkFont.Font(family="Lato", size=20)
+buttonfont = tkFont.Font(family="Lato", size=15)
+
+#All of the labels for the black spaces in the program
+big_whitespace1 = Label(root, text="")
+big_whitespace2 = Label(root, text="")
+small_whitespace1 = Label(root, text="")
+small_whitespace2 = Label(root, text="")
+small_whitespace3 = Label(root, text="")
+
+#labels and buttons for the game's homescreen
+gametitle = Label(root, text="Minjuns game", font=titlefont)
+playbutton = Button(root, text="Play", command=rng_for_question, padx=100, pady=10, font=buttonfont,)
+infobutton = Button(root, text="How to play", command=gameinfo, padx=67, pady=10, font=buttonfont)
+quitbutton = Button(root, text="Quit", command=root.destroy, padx=100, pady=10, font=buttonfont)
+
+#An error text for when there's a run-time error
+error = Label(root, text="An error has occured", font=titlefont)
+
+#This is the Game information
+info_text = Label(root, text="""
+Hello to Minjuns game.
+This game involves the use of your memory. 
+When you start, a question will appear. 
+It is your job to awnser that question, 
+choosing one of 3 different responses. 
+If you awnser the same question wrongly
+the second time, its game over.
+Be careful, and good luck!
+""", font=buttonfont)
+backbutton = Button(root, text="Back", command=load_homescreen, padx=100, pady=10, font=buttonfont)
+
+#This is the Labels and Button for the GAME OVER tab
+game_over_text_title = Label(root, text="GAME OVER", font=titlefont)
+game_over_text = Label(root, text="""
+You awnsered incorrectly.
+""", font=buttonfont)
+game_over_score = Label(root, text="", font=buttonfont)
+game_over_button = Button(root, text="Play again?", font=buttonfont, command=load_homescreen)
+
+#3 values for every question. 3x20: 60 in list(One for every choice)
+questionButtonVar = [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,\
+                     False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,\
+                     False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,]
+
+#All of the buttons and labels for question 1(What is your name?)
+question_one = Label(root, text="What is your name?", font=titlefont)
+question_one_button1 = Button(root, text="David King", command = lambda: question_one_button_command(0,0), padx=67, pady=10, font=buttonfont)
+question_one_button2 = Button(root, text="Shawn Macdonald", command = lambda: question_one_button_command(0,1), padx=33, pady=10, font=buttonfont)
+question_one_button3 = Button(root, text="Jacob Sherian", command = lambda: question_one_button_command(0,2), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 2(What did you eat for breakfast?)
+question_two = Label(root, text="What did you eat for breakfast?", font=titlefont)
+question_two_button1 = Button(root, text="Eggs and Bacon", command = lambda: question_two_button_command(1,3), padx=40, pady=10, font=buttonfont)
+question_two_button2 = Button(root, text="Cereal", command = lambda: question_two_button_command(1,4), padx=82, pady=10, font=buttonfont)
+question_two_button3 = Button(root, text="Toast", command = lambda: question_two_button_command(1,5), padx=85, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 3(What is your sister's name?)
+question_three = Label(root, text="What is your sister's name?", font=titlefont)
+question_three_button1 = Button(root, text="Evelynn", command = lambda: question_three_button_command(2,6), padx=77, pady=10, font=buttonfont)
+question_three_button2 = Button(root, text="Talyiah", command = lambda: question_three_button_command(2,7), padx=77, pady=10, font=buttonfont)
+question_three_button3 = Button(root, text="Rosie", command = lambda: question_three_button_command(2,8), padx=83, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 4(What did you eat for breakfast?)
+question_four = Label(root, text="How old are you?", font=titlefont)
+question_four_button1 = Button(root, text="18", command = lambda: question_four_button_command(3,9), padx=67, pady=10, font=buttonfont)
+question_four_button2 = Button(root, text="32", command = lambda: question_four_button_command(3,10), padx=67, pady=10, font=buttonfont)
+question_four_button3 = Button(root, text="64", command = lambda: question_four_button_command(3,11), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 5(What did you eat for breakfast?)
+question_five = Label(root, text="What kind of pet do you have?", font=titlefont)
+question_five_button1 = Button(root, text="Don't have one", command = lambda: question_five_button_command(4,12), padx=67, pady=10, font=buttonfont)
+question_five_button2 = Button(root, text="dog", command = lambda: question_five_button_command(4,13), padx=67, pady=10, font=buttonfont)
+question_five_button3 = Button(root, text="Gecko", command = lambda: question_five_button_command(4,14), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 6(What did you eat for breakfast?)
+question_six = Label(root, text="How old is your pet?", font=titlefont)
+question_six_button1 = Button(root, text="Don't have one", command = lambda: question_six_button_command(5,15), padx=67, pady=10, font=buttonfont)
+question_six_button2 = Button(root, text="4", command = lambda: question_six_button_command(5,16), padx=67, pady=10, font=buttonfont)
+question_six_button3 = Button(root, text="2", command = lambda: question_six_button_command(5,17), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 7(How old is your sister?)
+question_seven = Label(root, text="How old is your sister?", font=titlefont)
+question_seven_button1 = Button(root, text="59", command = lambda: question_seven_button_command(6,18), padx=67, pady=10, font=buttonfont)
+question_seven_button2 = Button(root, text="16", command = lambda: question_seven_button_command(6,19), padx=67, pady=10, font=buttonfont)
+question_seven_button3 = Button(root, text="26", command = lambda: question_seven_button_command(6,20), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 8(where were you last summer?)
+question_eight = Label(root, text="where were you last summer?", font=titlefont)
+question_eight_button1 = Button(root, text="Germany", command = lambda: question_eight_button_command(7,21), padx=67, pady=10, font=buttonfont)
+question_eight_button2 = Button(root, text="Bahamas", command = lambda: question_eight_button_command(7,22), padx=67, pady=10, font=buttonfont)
+question_eight_button3 = Button(root, text="New York", command = lambda: question_eight_button_command(7,23), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 9(Where was your sister last summer?)
+question_nine = Label(root, text="Where was your sister last summer?", font=titlefont)
+question_nine_button1 = Button(root, text="I don't know", command = lambda: question_nine_button_command(8,24), padx=67, pady=10, font=buttonfont)
+question_nine_button2 = Button(root, text="China", command = lambda: question_nine_button_command(8,25), padx=67, pady=10, font=buttonfont)
+question_nine_button3 = Button(root, text="Vancouver", command = lambda: question_nine_button_command(8,26), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 10(Where are your parents?)
+question_ten = Label(root, text="Where are your parents?", font=titlefont)
+question_ten_button1 = Button(root, text="Boston", command = lambda: question_ten_button_command(9,27), padx=67, pady=10, font=buttonfont)
+question_ten_button2 = Button(root, text="Cuba", command = lambda: question_ten_button_command(9,28), padx=67, pady=10, font=buttonfont)
+question_ten_button3 = Button(root, text="Alaska", command = lambda: question_ten_button_command(9,29), padx=67, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 11(How old is your father?)
+question_eleven = Label(root, text="How old is your father?", font=titlefont)
+question_eleven_button1 = Button(root, text="84", command = lambda: question_eleven_button_command(10,30), padx=67, pady=10, font=buttonfont)
+question_eleven_button2 = Button(root, text="56", command = lambda: question_eleven_button_command(10,31), padx=67, pady=10, font=buttonfont)
+question_eleven_button3 = Button(root, text="49", command = lambda: question_eleven_button_command(10,32), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 12(What is your father's name?)
+question_twelve = Label(root, text="What is your father's name?", font=titlefont)
+question_twelve_button1 = Button(root, text="Zhang Wei", command = lambda: question_twelve_button_command(11,33), padx=67, pady=10, font=buttonfont)
+question_twelve_button2 = Button(root, text="Aarav Cherian", command = lambda: question_twelve_button_command(11,34), padx=67, pady=10, font=buttonfont)
+question_twelve_button3 = Button(root, text="Noah Gilbert", command = lambda: question_twelve_button_command(11,35), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 13(Where is your sister right now?)
+question_thirteen = Label(root, text="Where is your sister right now?", font=titlefont)
+question_thirteen_button1 = Button(root, text="Honduras", command = lambda: question_thirteen_button_command(12,36), padx=67, pady=10, font=buttonfont)
+question_thirteen_button2 = Button(root, text="Mali", command = lambda: question_thirteen_button_command(12,37), padx=67, pady=10, font=buttonfont)
+question_thirteen_button3 = Button(root, text="Norway", command = lambda: question_thirteen_button_command(12,38), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 14(Where were you born?)
+question_fourteen = Label(root, text="Where were you born?", font=titlefont)
+question_fourteen_button1 = Button(root, text="Myanmar", command = lambda: question_fourteen_button_command(13,39), padx=67, pady=10, font=buttonfont)
+question_fourteen_button2 = Button(root, text="Cuba", command = lambda: question_fourteen_button_command(13,40), padx=67, pady=10, font=buttonfont)
+question_fourteen_button3 = Button(root, text="America", command = lambda: question_fourteen_button_command(13,41), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 15(What's your favorite book?)
+question_fifteen = Label(root, text="What's your favorite book/series?", font=titlefont)
+question_fifteen_button1 = Button(root, text="Harry potter", command = lambda: question_fifteen_button_command(14,42), padx=67, pady=10, font=buttonfont)
+question_fifteen_button2 = Button(root, text="Scythe", command = lambda: question_fifteen_button_command(14,43), padx=67, pady=10, font=buttonfont)
+question_fifteen_button3 = Button(root, text="Don Quixote", command = lambda: question_fifteen_button_command(14,44), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 16(What's your favourite beverage?)
+question_sixteen = Label(root, text="What's your favourite beverage?", font=titlefont)
+question_sixteen_button1 = Button(root, text="Sprite", command = lambda: question_sixteen_button_command(15,45), padx=67, pady=10, font=buttonfont)
+question_sixteen_button2 = Button(root, text="Beer", command = lambda: question_sixteen_button_command(15,46), padx=67, pady=10, font=buttonfont)
+question_sixteen_button3 = Button(root, text="Juice", command = lambda: question_sixteen_button_command(15,47), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 17(What is your mother's name?)
+question_seventeen = Label(root, text="What is your mother's name?", font=titlefont)
+question_seventeen_button1 = Button(root, text="Thea", command = lambda: question_seventeen_button_command(16,48), padx=67, pady=10, font=buttonfont)
+question_seventeen_button2 = Button(root, text="Isabella", command = lambda: question_seventeen_button_command(16,49), padx=67, pady=10, font=buttonfont)
+question_seventeen_button3 = Button(root, text="Beatrice", command = lambda: question_seventeen_button_command(16,50), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 18(Where was your mother born?)
+question_eighteen = Label(root, text="Where was your mother born?", font=titlefont)
+question_eighteen_button1 = Button(root, text="Iran", command = lambda: question_eighteen_button_command(17,51), padx=67, pady=10, font=buttonfont)
+question_eighteen_button2 = Button(root, text="Trinidad", command = lambda: question_eighteen_button_command(17,52), padx=67, pady=10, font=buttonfont)
+question_eighteen_button3 = Button(root, text="Poland", command = lambda: question_eighteen_button_command(17,53), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 19(Where was your father born?)
+question_nineteen = Label(root, text="Where was your father born?", font=titlefont)
+question_nineteen_button1 = Button(root, text="Palestine", command = lambda: question_nineteen_button_command(18,54), padx=67, pady=10, font=buttonfont)
+question_nineteen_button2 = Button(root, text="Belarus", command = lambda: question_nineteen_button_command(18,55), padx=67, pady=10, font=buttonfont)
+question_nineteen_button3 = Button(root, text="Barbados", command = lambda: question_nineteen_button_command(18,56), padx=51, pady=10, font=buttonfont)
+
+#All of the buttons and labels for question 20(Which  meal of the day is your favorite?)
+question_twenty = Label(root, text="Which  meal of the day is your favorite?", font=titlefont)
+question_twenty_button1 = Button(root, text="Breakfast", command = lambda: question_twenty_button_command(19,57), padx=67, pady=10, font=buttonfont)
+question_twenty_button2 = Button(root, text="Lunch", command = lambda: question_twenty_button_command(19,58), padx=67, pady=10, font=buttonfont)
+question_twenty_button3 = Button(root, text="Dinner", command = lambda: question_twenty_button_command(19,59), padx=51, pady=10, font=buttonfont)
+
+load_homescreen()
+
+root.mainloop()
